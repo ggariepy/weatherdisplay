@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "config": "ts-node ./src/assets/scripts/setEnv.ts",
+    "start": "npm run config -- --environment=dev && ng serve",
+    "build": "npm run config -- --environment=prod && ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,8 +19,13 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@ngrx/store": "^15.4.0",
+    "@ngrx/store-devtools": "^15.4.0",
+    "dotenv": "^16.0.3",
     "rxjs": "~7.8.0",
+    "ts-node": "^10.9.1",
     "tslib": "^2.3.0",
+    "yargs": "^17.7.1",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
