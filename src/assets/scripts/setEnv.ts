@@ -3,7 +3,10 @@
 const { writeFile, existsSync, mkdirSync } = require('fs');
 const { argv } = require('yargs');
 
-require('dotenv').config();
+const path = require('path');
+let thePath = path.resolve(__dirname, '../.env');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
 const environment = argv.environment;
 
 
@@ -13,9 +16,7 @@ function writeFileUsingFS(targetPath, environmentFileContent) {
       console.log(err);
     }
     if (environmentFileContent !== '') {
-      console.log(`wrote environment data to ${targetPath}`);
-      console.log(`App: ${appAPI}`);
-      console.log(`Station: ${stnAPI}`);
+      console.log(`Wrote environment data to ${targetPath}`);
     }
   });
 }
@@ -29,11 +30,6 @@ const stnAPI = process.env.STATION_API_KEY
 if (!existsSync(envDirectory)) {
   mkdirSync(envDirectory);
 }
-
-// Creates the `environment.prod.ts` and `environment.ts` files 
-// if they do not exist
-// writeFileUsingFS('./src/environments/environment.prod.ts', '');
-// writeFileUsingFS('./src/environments/environment.ts', '');
 
 
 // Checks whether command line argument of `prod` was provided signifying production mode
@@ -51,7 +47,7 @@ const environmentFileContent = `
   export const environment = {
     production: ${isProduction},
     AMBIENT_API_KEY: '${appAPI}',
-    CAVANT_DRIVE_WX: '${stnAPI}'
+    STATION_API_KEY: '${stnAPI}'
   };
 `;
 

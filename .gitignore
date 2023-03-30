@@ -44,6 +44,6 @@ Thumbs.db
 # Angular environment variables
 environment.prod.ts
 environment.ts
-/environment
+environments/
 .env
 .env.test
