@@ -1,11 +1,30 @@
 export interface weather {
-    outdoorTemp : number,
-    outdoorHumidity: number,
-    indoorTemp: number,
-    indoorHumidity: number,
-    windSpeed: number,
-    rainQuantity: number,
-    barometricPressure: number,
-    lightWattsMeterSquared: number,
-    uvIntensity: number
+    baromabsin: number 
+    baromrelin: number
+    batt_co2: number
+    battout: number
+    dailyrainin: number
+    date: Date
+    dateutc: number
+    dewPoint: number
+    dewPointin: number
+    eventrainin: number
+    feelsLike: number
+    feelsLikein: number
+    hourlyrainin: number
+    humidity: number
+    humidityin: number
+    lastRain: Date
+    maxdailygust: number
+    monthlyrainin: number
+    solarradiation: number
+    tempf: number
+    tempinf: number
+    totalrainin: number
+    tz: string
+    uv: number
+    weeklyrainin: number
+    winddir: number
+    windgustmph: number
+    windspeedmph: number
 }

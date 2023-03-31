@@ -9,30 +9,29 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 const environment = argv.environment;
 
-
 function writeFileUsingFS(targetPath, environmentFileContent) {
   writeFile(targetPath, environmentFileContent, function (err) {
     if (err) {
       console.log(err);
     }
     if (environmentFileContent !== '') {
+      console.log(`apiKey: ${apiKey}\napplicationKey: ${applicationKey}`);
       console.log(`Wrote environment data to ${targetPath}`);
     }
   });
 }
 
-// Providing path to the `environments` directory
+// Providing path to the 'environments'  directory
 const envDirectory = './src/environments';
-const appAPI = process.env.AMBIENT_API_KEY;
-const stnAPI = process.env.STATION_API_KEY
+const apiKey = process.env.apiKey;
+const applicationKey = process.env.applicationKey;
 
-// creates the `environments` directory if it does not exist
+// creates the 'environments' directory if it does not exist
 if (!existsSync(envDirectory)) {
   mkdirSync(envDirectory);
 }
 
-
-// Checks whether command line argument of `prod` was provided signifying production mode
+// Checks whether command line argument of 'prod' was provided signifying production mode
 const isProduction = environment === 'prod';
 
 // choose the correct targetPath based on the environment chosen
@@ -46,8 +45,8 @@ const environmentFileContent = `
   // setEnv.ts and using dotenv for managing API key secrecy
   export const environment = {
     production: ${isProduction},
-    AMBIENT_API_KEY: '${appAPI}',
-    STATION_API_KEY: '${stnAPI}'
+    applicationKey: '${applicationKey}',
+    apiKey: '${apiKey}'
   };
 `;
 
