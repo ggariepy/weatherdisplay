@@ -1,4 +1,3 @@
-import { Observable, throwError } from "rxjs";
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from "src/environments/environment";
@@ -15,6 +14,7 @@ export class WxDataService {
 
   getCurrentConditions() {
     let URI = this.apiURI + '?apiKey=' + this.apiKey + '&applicationKey=' + this.appKey;
+    console.log(`getCurrentConditions: calling ("${this.apiURI}")`);
     return this.http.get(URI,
         { 
             observe: 'body',
@@ -22,5 +22,4 @@ export class WxDataService {
         }    
     );
   }
-
 }

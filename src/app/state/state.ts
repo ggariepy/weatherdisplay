@@ -1,11 +1,40 @@
-import { weather } from '../models/wxmodel';
+import { wxModel } from '../models/wxmodel';
 
-export interface WeatherState {
-    weather: weather;
+export interface WeatherConditions {
+    rawData: string,
+    baromabsin: number 
+    baromrelin: number
+    batt_co2: number
+    battout: number
+    dailyrainin: number
+    date: Date
+    dateutc: number
+    dewPoint: number
+    dewPointin: number
+    eventrainin: number
+    feelsLike: number
+    feelsLikein: number
+    hourlyrainin: number
+    humidity: number
+    humidityin: number
+    lastRain: Date
+    maxdailygust: number
+    monthlyrainin: number
+    solarradiation: number
+    tempf: number
+    tempinf: number
+    totalrainin: number
+    tz: string
+    uv: number
+    weeklyrainin: number
+    winddir: number
+    windgustmph: number
+    windspeedmph: number
 }
 
-export const initialState: weather =
+export const initialState: WeatherConditions =
 {
+    rawData: "initialState",
     baromabsin: 0.0,
     baromrelin: 0.0,
     batt_co2: 0,

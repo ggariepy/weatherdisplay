@@ -1,4 +1,4 @@
-export interface weather {
+export interface wxModel {
     baromabsin: number 
     baromrelin: number
     batt_co2: number

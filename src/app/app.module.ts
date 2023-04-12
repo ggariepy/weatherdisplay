@@ -5,6 +5,9 @@ import { StoreModule } from '@ngrx/store';
 import { WxDisplayModule } from './wx-display/wx-display.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherReducer } from '../app/state/reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { WeatherEffects } from './state/effects';
 
 @NgModule({
   declarations: [
@@ -14,8 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     WxDisplayModule,
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreModule.forRoot({store : WeatherReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot(WeatherEffects)
   ],
   providers: [],
   bootstrap: [AppComponent]
