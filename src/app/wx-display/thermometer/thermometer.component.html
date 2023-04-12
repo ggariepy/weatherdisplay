@@ -1,5 +1,17 @@
-<h1>Temperature Data</h1>
-<h3>Outdoor Temperature</h3>
-<span>{{outdoorTemp$ | async}} degrees F</span>
-<h3>Indoor Temperature</h3>
-<span>{{indoorTemp$ | async}} degrees F</span>
+<h1>Comfort Meter</h1>
+<h3>Outdoor Conditions</h3>
+<span>Temp: {{outdoorTemp$ | async}} °F</span>
+<br />
+<span>Relative Humidity: {{outdoorRelHumidity$ | async}}%</span>
+<br />
+<span>Feels Like: {{outdoorFeelsLikeTemp$ | async}} °F</span>
+<br />
+<br />
+<h3>Indoor Conditions</h3>
+<span>{{indoorTemp$ | async}} °F</span>
+<br />
+<span>Relative Humidity: {{indoorRelHumidity$ | async}}%</span>
+<br />
+<span>Feels Like: {{indoorFeelsLikeTemp$ | async}} °F</span>
+<br />
+<br />
