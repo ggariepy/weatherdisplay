@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of, catchError, exhaustMap, map, EMPTY } from 'rxjs';
+import { catchError, exhaustMap, map, EMPTY } from 'rxjs';
 import { WxDataService } from 'src/app/api/wxdata.service';
-import { WeatherConditions } from './state';
-import {getWeather, getWeatherFailed, getWeatherSuccess} from '../state/actions';
-import { create } from 'domain';
+import {getWeather, getWeatherSuccess} from '../state/actions';
 
 @Injectable()
 export class WeatherEffects {
