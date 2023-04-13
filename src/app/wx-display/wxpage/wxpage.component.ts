@@ -14,8 +14,7 @@ export class WxpageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('wxpage dispatching getWeather()');
     this.store.dispatch(getWeather());
-    console.log('wxpage finished dispatching getWeather()');
+    setInterval(() => this.store.dispatch(getWeather()), 60000);
   }
 }
