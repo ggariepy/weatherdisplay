@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { WeatherConditions } from 'src/app/state/state';
@@ -8,14 +8,10 @@ import { WeatherConditions } from 'src/app/state/state';
   templateUrl: './chronometer.component.html',
   styleUrls: ['./chronometer.component.css']
 })
-export class ChronometerComponent implements OnInit {
+export class ChronometerComponent {
   lastUpdate$: Observable<Date>;
 
   constructor(private store: Store<WeatherConditions>) {
     this.lastUpdate$ = this.store.select(x => x.date);
   }
-
-  ngOnInit(): void {
-  }
-
 }

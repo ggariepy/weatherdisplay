@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { WeatherConditions } from 'src/app/state/state';
@@ -8,14 +8,13 @@ import { WeatherConditions } from 'src/app/state/state';
   templateUrl: './raingauge.component.html',
   styleUrls: ['./raingauge.component.css']
 })
-export class RaingaugeComponent implements OnInit {
+export class RaingaugeComponent {
   lastRainDate$: Observable<Date>;
   dailyRainInches$: Observable<number>;
   weeklyRainInches$: Observable<number>;
   monthlyRainInches$: Observable<number>;
   totalRainInches$: Observable<number>;
   eventRainInches$: Observable<number>;
-
 
   constructor(private store: Store<WeatherConditions>) {
     this.dailyRainInches$ = this.store.select(x => x.dailyrainin); 
@@ -25,8 +24,4 @@ export class RaingaugeComponent implements OnInit {
     this.monthlyRainInches$ = this.store.select(x => x.monthlyrainin);
     this.totalRainInches$ = this.store.select(x => x.totalrainin);
   }
-
-  ngOnInit(): void {
-  }
-  
 }
