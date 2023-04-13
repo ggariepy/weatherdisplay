@@ -15,7 +15,6 @@ function writeFileUsingFS(targetPath, environmentFileContent) {
       console.log(err);
     }
     if (environmentFileContent !== '') {
-      console.log(`apiKey: ${apiKey}\napplicationKey: ${applicationKey}`);
       console.log(`Wrote environment data to ${targetPath}`);
     }
   });

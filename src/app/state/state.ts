@@ -34,7 +34,7 @@ export interface WeatherConditions {
 
 export const initialState: WeatherConditions =
 {
-    rawData: "initialState",
+    rawData: "none",
     baromabsin: 0.0,
     baromrelin: 0.0,
     batt_co2: 0,
@@ -57,7 +57,7 @@ export const initialState: WeatherConditions =
     tempf: 0,
     tempinf: 0,
     totalrainin: 0,
-    tz: "Outer Space",
+    tz: "UTC",
     uv: 0,
     weeklyrainin: 0,
     winddir: 0,
