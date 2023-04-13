@@ -18,11 +18,11 @@ export class ThermometerComponent {
   indoorFeelsLikeTemp$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.outdoorTemp$ = this.store.select(x => x.tempf);
-    this.outdoorRelHumidity$ = this.store.select(x => x.humidity);
-    this.outdoorFeelsLikeTemp$ = this.store.select(x => x.feelsLike);
-    this.indoorTemp$ = this.store.select(x => x.tempinf);
-    this.indoorRelHumidity$ = this.store.select(x => x.humidityin);
-    this.indoorFeelsLikeTemp$ = this.store.select(x => x.feelsLikein);
+    this.outdoorTemp$ = this.store.select("tempf");
+    this.outdoorRelHumidity$ = this.store.select("humidity");
+    this.outdoorFeelsLikeTemp$ = this.store.select("feelsLike");
+    this.indoorTemp$ = this.store.select("tempinf");
+    this.indoorRelHumidity$ = this.store.select("humidityin");
+    this.indoorFeelsLikeTemp$ = this.store.select("feelsLikein");
   }
 }

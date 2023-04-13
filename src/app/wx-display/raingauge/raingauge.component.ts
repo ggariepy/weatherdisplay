@@ -17,11 +17,11 @@ export class RaingaugeComponent {
   eventRainInches$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.dailyRainInches$ = this.store.select(x => x.dailyrainin); 
-    this.eventRainInches$ = this.store.select(x => x.eventrainin);
-    this.lastRainDate$ = this.store.select(x => x.lastRain);
-    this.weeklyRainInches$ = this.store.select(x => x.weeklyrainin);
-    this.monthlyRainInches$ = this.store.select(x => x.monthlyrainin);
-    this.totalRainInches$ = this.store.select(x => x.totalrainin);
+    this.dailyRainInches$ = this.store.select("dailyrainin"); 
+    this.eventRainInches$ = this.store.select("eventrainin");
+    this.lastRainDate$ = this.store.select("lastRain");
+    this.weeklyRainInches$ = this.store.select("weeklyrainin");
+    this.monthlyRainInches$ = this.store.select("monthlyrainin");
+    this.totalRainInches$ = this.store.select("totalrainin");
   }
 }

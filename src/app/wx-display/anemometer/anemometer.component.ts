@@ -15,9 +15,9 @@ export class AnemometerComponent {
   windGustMAXMPH$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.windSpeedMPH$ = this.store.select(x => x.windspeedmph);
-    this.windGustMPH$ = this.store.select(x => x.windgustmph);
-    this.windGustMAXMPH$ = this.store.select(x => x.maxdailygust);
-    this.windDirection$ = this.store.select(x => x.winddir);
+    this.windSpeedMPH$ = this.store.select("windspeedmph");
+    this.windGustMPH$ = this.store.select("windgustmph");
+    this.windGustMAXMPH$ = this.store.select("maxdailygust");
+    this.windDirection$ = this.store.select("winddir");
   }
 }

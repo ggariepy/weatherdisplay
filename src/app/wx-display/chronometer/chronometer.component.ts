@@ -12,6 +12,6 @@ export class ChronometerComponent {
   lastUpdate$: Observable<Date>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.lastUpdate$ = this.store.select(x => x.date);
+    this.lastUpdate$ = this.store.select("date");
   }
 }

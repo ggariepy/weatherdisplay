@@ -21,7 +21,7 @@ export class SunlightmeterComponent {
   uvRadiation$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.solarRadiation$ = this.store.select(x => x.solarradiation);
-    this.uvRadiation$ = this.store.select(x => x.uv);
+    this.solarRadiation$ = this.store.select("solarradiation");
+    this.uvRadiation$ = this.store.select("uv");
   }
 }

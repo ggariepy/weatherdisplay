@@ -13,7 +13,7 @@ export class BarometerComponent {
   absPressure$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.relPressure$ = this.store.select(x => x.baromrelin);
-    this.absPressure$ = this.store.select(x => x.baromabsin);
+    this.relPressure$ = this.store.select("baromrelin");
+    this.absPressure$ = this.store.select("baromabsin");
   }
 }
