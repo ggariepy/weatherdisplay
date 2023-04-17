@@ -16,5 +16,4 @@ export const updateOutsideTemp = createAction(
     props<{temp: number}>());
 
 export const updateInsideTemp = createAction(
-    '[WX-Display] UPDATE_TEMP_INSIDE',
-    props<{temp: number}>());
+    '[WX-Display] UPDATE_TEMP_INSIDE');

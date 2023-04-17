@@ -56,5 +56,5 @@ export const WeatherReducer = createReducer
                 rawData: error
             }
         )
-    )
+    ),
 );

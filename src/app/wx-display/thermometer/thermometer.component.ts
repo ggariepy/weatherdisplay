@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select} from '@ngrx/store';
 import { WeatherConditions } from 'src/app/state/state';
@@ -24,5 +24,10 @@ export class ThermometerComponent {
     this.indoorTemp$ = this.store.select("tempinf");
     this.indoorRelHumidity$ = this.store.select("humidityin");
     this.indoorFeelsLikeTemp$ = this.store.select("feelsLikein");
+  }
+
+  ngOnInit(): void {
+    this.store.dispatch(updateInsideTemp());
+    // setInterval(() => this.store.dispatch(getWeather()), 60000);
   }
 }
