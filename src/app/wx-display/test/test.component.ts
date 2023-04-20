@@ -14,6 +14,5 @@ export class TestComponent {
 
   constructor(private store: Store<WeatherConditions>) {
     this.rawData$ = this.store.select(selectBaromABSIn);
-    // this.rawData$ = this.store.select('baromabsin');
   }
 }
