@@ -17,8 +17,8 @@ import { WeatherEffects } from './state/effects';
     BrowserModule,
     HttpClientModule,
     WxDisplayModule,
-    StoreModule.forRoot({store : WeatherReducer}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    StoreModule.forRoot({weather : WeatherReducer}),
+    StoreDevtoolsModule.instrument({ name: '*** WEATHERDISPLAY STATE ***', maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot(WeatherEffects)
   ],
   providers: [],

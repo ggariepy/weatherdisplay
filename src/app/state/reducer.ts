@@ -17,7 +17,7 @@ export const WeatherReducer = createReducer
         (
             {
                 ...state,
-                rawData: weather[0].lastData,
+                error: 'none',
                 baromabsin: weather[0].lastData.baromabsin,
                 baromrelin: weather[0].lastData.baromrelin,
                 batt_co2: weather[0].lastData.batt_co2,
@@ -53,7 +53,7 @@ export const WeatherReducer = createReducer
         (
             {
                 ...state,
-                rawData: error
+                error: error
             }
         )
     ),

@@ -1,8 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Store, select} from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { WeatherConditions } from 'src/app/state/state';
-import { updateOutsideTemp, updateInsideTemp } from '../../state/actions';
+import {  
+  selectIndoorHumidity,
+  selectIndoorFeelsLikeTemp,
+  selectOutdoorTemp,
+  selectOutdoorHumidity,
+  selectOutdoorFeelsLikeTemp,
+  selectIndoorTemp
+} from 'src/app/state/selectors';
+
 
 @Component({
   selector: 'app-thermometer',
@@ -18,16 +26,11 @@ export class ThermometerComponent {
   indoorFeelsLikeTemp$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.outdoorTemp$ = this.store.select("tempf");
-    this.outdoorRelHumidity$ = this.store.select("humidity");
-    this.outdoorFeelsLikeTemp$ = this.store.select("feelsLike");
-    this.indoorTemp$ = this.store.select("tempinf");
-    this.indoorRelHumidity$ = this.store.select("humidityin");
-    this.indoorFeelsLikeTemp$ = this.store.select("feelsLikein");
-  }
-
-  ngOnInit(): void {
-    this.store.dispatch(updateInsideTemp());
-    // setInterval(() => this.store.dispatch(getWeather()), 60000);
+    this.outdoorTemp$ = this.store.select(selectOutdoorTemp);
+    this.outdoorRelHumidity$ = this.store.select(selectOutdoorHumidity);
+    this.outdoorFeelsLikeTemp$ = this.store.select(selectOutdoorFeelsLikeTemp);
+    this.indoorTemp$ = this.store.select(selectIndoorTemp);
+    this.indoorRelHumidity$ = this.store.select(selectIndoorHumidity);
+    this.indoorFeelsLikeTemp$ = this.store.select(selectIndoorFeelsLikeTemp);
   }
 }

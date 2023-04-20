@@ -1,5 +1,7 @@
 <h1>Rain Data</h1>
-<span>Total rain recorded: {{totalRainInches$ | async}}</span>
+
+
+<span>Latest rain event: {{lastRainDate$ | async}}</span>
 <br />
 <span>Event rain recorded: {{eventRainInches$ | async}}</span>
 <br />
@@ -8,5 +10,7 @@
 <span>Weekly rain recorded: {{weeklyRainInches$ | async}}</span>
 <br />
 <span>Monthly rain recorded: {{monthlyRainInches$ | async}}</span>
+<br />
+<span>All-time rain recorded: {{totalRainInches$ | async}}</span>
 <br />
 

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { WeatherConditions } from 'src/app/state/state';
+import { selectSolarRadiation, selectUVRadiation } from 'src/app/state/selectors';
+
 
 enum UVRadiation{
   Low,
@@ -21,7 +23,7 @@ export class SunlightmeterComponent {
   uvRadiation$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.solarRadiation$ = this.store.select("solarradiation");
-    this.uvRadiation$ = this.store.select("uv");
+    this.solarRadiation$ = this.store.select(selectSolarRadiation);
+    this.uvRadiation$ = this.store.select(selectUVRadiation);
   }
 }

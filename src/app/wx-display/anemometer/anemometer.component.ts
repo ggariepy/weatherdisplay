@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { WeatherConditions } from 'src/app/state/state';
+import {  WeatherConditions } from 'src/app/state/state';
+import {
+  selectWindSpeedMPH, 
+  selectWindGustMPH,
+  selectWindDirection,
+  selectWindGustMAXMPH
+}  from 'src/app/state/selectors';
+
 
 @Component({
   selector: 'app-anemometer',
@@ -15,9 +22,9 @@ export class AnemometerComponent {
   windGustMAXMPH$: Observable<number>;
   
   constructor(private store: Store<WeatherConditions>) {
-    this.windSpeedMPH$ = this.store.select("windspeedmph");
-    this.windGustMPH$ = this.store.select("windgustmph");
-    this.windGustMAXMPH$ = this.store.select("maxdailygust");
-    this.windDirection$ = this.store.select("winddir");
+    this.windSpeedMPH$ = this.store.select(selectWindSpeedMPH);
+    this.windGustMPH$ = this.store.select(selectWindGustMPH);
+    this.windGustMAXMPH$ = this.store.select(selectWindGustMAXMPH);
+    this.windDirection$ = this.store.select(selectWindDirection);
   }
 }

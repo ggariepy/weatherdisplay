@@ -7,6 +7,7 @@ import { ChronometerComponent } from './chronometer/chronometer.component';
 import { BarometerComponent } from './barometer/barometer.component';
 import { RaingaugeComponent } from './raingauge/raingauge.component';
 import { SunlightmeterComponent } from './sunlightmeter/sunlightmeter.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SunlightmeterComponent } from './sunlightmeter/sunlightmeter.component'
     ChronometerComponent,
     BarometerComponent,
     RaingaugeComponent,
-    SunlightmeterComponent
+    SunlightmeterComponent,
+    TestComponent
   ],
   exports: [
     WxpageComponent,

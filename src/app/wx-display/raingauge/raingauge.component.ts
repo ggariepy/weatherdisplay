@@ -2,6 +2,15 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { WeatherConditions } from 'src/app/state/state';
+import {
+  selectDailyRainInches,
+  selectMonthlyRainInches,
+  selectLastRainDate,
+  selectWeeklyRainInches,
+  selectTotalRainInches,
+  selectEventRainInches
+} from 'src/app/state/selectors';
+
 
 @Component({
   selector: 'app-raingauge',
@@ -17,11 +26,11 @@ export class RaingaugeComponent {
   eventRainInches$: Observable<number>;
 
   constructor(private store: Store<WeatherConditions>) {
-    this.dailyRainInches$ = this.store.select("dailyrainin"); 
-    this.eventRainInches$ = this.store.select("eventrainin");
-    this.lastRainDate$ = this.store.select("lastRain");
-    this.weeklyRainInches$ = this.store.select("weeklyrainin");
-    this.monthlyRainInches$ = this.store.select("monthlyrainin");
-    this.totalRainInches$ = this.store.select("totalrainin");
+    this.dailyRainInches$ = this.store.select(selectDailyRainInches); 
+    this.eventRainInches$ = this.store.select(selectEventRainInches);
+    this.lastRainDate$ = this.store.select(selectLastRainDate);
+    this.weeklyRainInches$ = this.store.select(selectWeeklyRainInches);
+    this.monthlyRainInches$ = this.store.select(selectMonthlyRainInches);
+    this.totalRainInches$ = this.store.select(selectTotalRainInches);
   }
 }

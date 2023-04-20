@@ -1,7 +1,5 @@
-import { wxModel } from '../models/wxmodel';
-
 export interface WeatherConditions {
-    rawData: string,
+    error: string,
     baromabsin: number 
     baromrelin: number
     batt_co2: number
@@ -34,7 +32,7 @@ export interface WeatherConditions {
 
 export const initialState: WeatherConditions =
 {
-    rawData: "none",
+    error: "none",
     baromabsin: 0.0,
     baromrelin: 0.0,
     batt_co2: 0,
@@ -64,3 +62,4 @@ export const initialState: WeatherConditions =
     windgustmph: 0,
     windspeedmph: 0
 };
+
