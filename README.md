@@ -1,27 +1,24 @@
 # Weatherdisplay
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Weather Display uses the Ambient Weather API to retrieve data from their line of personal weather stations.
 
-## Development server
+## Purpose
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application was developed using Angular 14 and NGRX.  It will slowly develop into a more fully featured application as I have time.  
 
-## Code scaffolding
+## API Keys
+In order to use this application, you will need an application API Key and a personal API key in order to access their servers.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+These keys are deliberately kept off of this Git repository as there is enough of my personal data floating around on the web unsupervised <ahem, Facebook>, but I can supply them to you so you can see the output of my personal weather station if need be.  The keys are stored in a file called assets/.env in the following format:
 
-## Build
+  # Environment variables
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  # Application API Key
+  applicationKey=xxx
 
-## Running unit tests
+  # API Key for weather station (Device Key)
+  apiKey=xxx
+  
+If you wish to register your own keys, this can be done at the Ambient Weather Website: https://ambientweather.net/account
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
