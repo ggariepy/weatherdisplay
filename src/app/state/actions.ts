@@ -10,10 +10,3 @@ export const getWeatherFailed = createAction(
 export const getWeatherSuccess = createAction(
     '[WX-Api] GET_WX_DATA_SUCCESS',
     props<{weather: any}>());
-
-export const updateOutsideTemp = createAction(
-    '[WX-Display] UPDATE_TEMP_OUTSIDE',
-    props<{temp: number}>());
-
-export const updateInsideTemp = createAction(
-    '[WX-Display] UPDATE_TEMP_INSIDE');

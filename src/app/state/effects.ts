@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, EMPTY } from 'rxjs';
 import { WxDataService } from 'src/app/api/wxdata.service';
-import {getWeather, getWeatherSuccess, updateInsideTemp} from '../state/actions';
+import {getWeather, getWeatherSuccess } from '../state/actions';
 
 @Injectable()
 export class WeatherEffects {

@@ -3,9 +3,7 @@ import { WeatherConditions, initialState } from '../state/state';
 import { 
     getWeather,
     getWeatherSuccess,
-    getWeatherFailed,
-    updateInsideTemp,
-    updateOutsideTemp
+    getWeatherFailed
 } from './actions';
 import { error } from 'console';
 
